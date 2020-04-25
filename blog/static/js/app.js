@@ -1,0 +1,1 @@
+console.log("app.jsを読み込んでいます");
