@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Article
 from .forms import ArticleCreateForm, ArticleUpdateForm
+from django.urls import reverse_lazy
 
 class ArticleListView(generic.ListView):
     model = Article
@@ -27,3 +28,8 @@ class ArticleUpdateView(generic.UpdateView):
     template_name = 'update.html'
     form_class = ArticleUpdateForm
     success_url = '/'
+
+class ArticleDeleteView(generic.DeleteView):
+    model = Article
+    template_name = 'delete.html'
+    success_url = reverse_lazy('index')
