@@ -11,6 +11,16 @@
 
 {% block content %}
     <p>index.html</p>
+    {% for article in article_list %}
+        <div class="article">
+            <div class="article-title">
+                <p>{{ article.title }}</p>
+            </div>
+            <div class="article-content">
+                <p>{{ article.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
 
 {% block script %}
