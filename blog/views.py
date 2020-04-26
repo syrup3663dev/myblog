@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Article
-from .forms import ArticleForm
+from .forms import ArticleCreateForm, ArticleUpdateForm
 
 class ArticleListView(generic.ListView):
     model = Article
@@ -19,5 +19,11 @@ class ArticleDetailView(generic.DetailView):
 class ArticleCreateView(generic.CreateView):
     model = Article
     template_name = 'create.html'
-    form_class = ArticleForm
+    form_class = ArticleCreateForm
     success_url = '/'  # 成功時にリダイレクトするURL
+
+class ArticleUpdateView(generic.UpdateView):
+    model = Article
+    template_name = 'update.html'
+    form_class = ArticleUpdateForm
+    success_url = '/'

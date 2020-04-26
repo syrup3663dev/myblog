@@ -3,12 +3,12 @@
 
 {% block content %}
 <div>
-    <form method='post'>
+    <form method="POST">
     {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
-        <button type='submit'>投稿</button>
+        <button type="submit">更新</button>
     </form>
 </div>
 {% endblock %}
