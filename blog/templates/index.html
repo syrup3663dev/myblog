@@ -14,7 +14,7 @@
     {% for article in article_list %}
         <div class="article">
             <div class="article-title">
-                <p>{{ article.title }}</p>
+                <p><a href="{% url 'detail' article.pk %}">{{ article.title }}</a></p>
             </div>
             <div class="article-content">
                 <p>{{ article.content }}</p>
